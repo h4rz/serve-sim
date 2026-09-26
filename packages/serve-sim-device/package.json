@@ -1,0 +1,34 @@
+{
+  "name": "@h4rz/serve-sim-device",
+  "version": "0.1.0",
+  "type": "module",
+  "license": "Apache-2.0",
+  "description": "WebDriverAgent-backed physical iOS device streaming for serve-sim integrations",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h4rz/serve-sim.git",
+    "directory": "packages/serve-sim-device"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "./dist/index.cjs",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist/index.cjs",
+    "src/index.ts",
+    "src/wda.ts",
+    "src/device-server.ts"
+  ],
+  "scripts": {
+    "build": "bun build ./src/index.ts --target=node --format=cjs --outfile dist/index.cjs",
+    "test": "bun test src/device-server.test.ts"
+  }
+}

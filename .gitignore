@@ -1,5 +1,6 @@
 node_modules/
 dist/
+!packages/serve-sim-device/dist/
 .build/
 .swiftpm/
 *.o
